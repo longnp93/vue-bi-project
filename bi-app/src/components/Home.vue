@@ -4,7 +4,8 @@
             <div class="col-9">
                 <h5>Motivation</h5>
                 <div>
-                I am Long Nguyen. I built a <b>flight project</b> to showcase my skills in 
+                I am Long Nguyen. I am searching for a new challenge in Business Intelligence; therefor, 
+                I built a <b>flight project</b> to showcase my skills in 
                 <b>Data Warehouse (Microsoft SQL Server 2019)</b> and <b>Business Intelligence (Power BI)</b>.
                 </div>
                 <br>
