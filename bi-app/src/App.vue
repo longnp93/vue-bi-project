@@ -17,7 +17,7 @@
             <router-link class="nav-link pr-3" to="/ETLMonitoring">ETL Monitoring</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/UML">UML</router-link>
+            <router-link class="nav-link pr-3" to="/FlightModelling">Flight Modelling</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link pr-3" to="/ERDiagram">ER Diagrams</router-link>

@@ -9,9 +9,9 @@ const routes = [
     component: () => import('../components/Home')
   },
   {
-    path: '/UML',
-    name: 'UML',
-    component: () => import('../components/UML')
+    path: '/FlightModelling',
+    name: 'FlightModelling',
+    component: () => import('../components/FlightModelling')
   },
   {
     path: '/ERDiagram',
