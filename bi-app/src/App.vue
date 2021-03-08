@@ -1,14 +1,20 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-dark bg-dark justify-content-between flex-nowrap flex-row">
+    <nav class="navbar navbar-dark background-black justify-content-between flex-nowrap flex-row">
       <div class="container">
           <router-link class="navbar-brand float-left" to="/">
-            <img src= '@/assets/logo.png' width="30" height="30"/>            
+            <img src= '@/assets/logo/logo-white.png' width="80" height="50"/>            
           </router-link>
  
         <ul class="nav navbar-nav flex-row float-right">
           <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/PowerBI">Power BI</router-link>
+            <router-link class="nav-link pr-3" to="/FlightAnalytics">Flight Analytics</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link pr-3" to="/DataFlow">Data Flow</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link pr-3" to="/ETLMonitoring">ETL Monitoring</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link pr-3" to="/UML">UML</router-link>
@@ -22,12 +28,13 @@
     </nav>
     
     <!-- Router view -->
-    <div class="container mt-5">
+    <div class="container mt-2">
       <router-view></router-view>
     </div>
   </div>
 </template>
-
+<style src="./css/umlcd.css"></style>
+<style src="./css/custom.css"></style>
 <script>
 /*
 import HelloWorld from './components/HelloWorld.vue'

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>UML</h1>
+        <h5>UML</h5>
         <div id="uml_paper"></div>
     </div>
 </template>

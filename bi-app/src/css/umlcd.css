@@ -1,0 +1,24 @@
+.joint-type-uml-composition .marker-target {
+    fill: #4a4e69;
+    stroke: #4a4e69;
+}
+
+.connection-wrap {
+    display: none
+}
+
+.marker-arrowhead {
+    display: none
+}
+
+.link-tools {
+    display: none
+}
+
+.marker-vertices {
+    display: none
+}
+
+.element.basic.Rect {
+    cursor: auto
+}

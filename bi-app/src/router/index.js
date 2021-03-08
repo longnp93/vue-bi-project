@@ -19,9 +19,20 @@ const routes = [
     component: () => import('../components/ERDiagram')
   },
   {
-    path: '/PowerBI',
-    name: 'PowerBI',
-    component: () => import('../components/PowerBI')
+    path: '/FlightAnalytics',
+    name: 'FlightAnalytics',
+    component: () => import('../components/FlightAnalytics')
+  },
+  {
+    path: '/DataFlow',
+    name: 'DataFlow',
+    component: () => import('../components/DataFlow')
+  }
+  ,
+  {
+    path: '/ETLMonitoring',
+    name: 'ETLMonitoring',
+    component: () => import('../components/ETLMonitoring')
   }
 ]
 
