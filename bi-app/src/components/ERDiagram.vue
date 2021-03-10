@@ -8,7 +8,7 @@
 //import * as joint from 'jointjs'
 
 export default {
-    title: 'Flight ER Diagram',
+    title: 'Entity Relationship Diagram',
     mounted() {
         const joint=this.$joint
         const V = joint.V;

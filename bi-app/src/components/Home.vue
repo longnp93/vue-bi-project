@@ -6,7 +6,7 @@
                 <div>
                 I am Long Nguyen. I am searching for a new challenge in Business Intelligence; therefore, 
                 I built a <b>flight project</b> to showcase my skills in 
-                <b>Data Warehouse (Microsoft SQL Server 2019)</b> and <b>Business Intelligence (Power BI)</b>.
+                <b>Data Warehouse (Microsoft SQL Server 2019), ETL</b> and <b>Business Intelligence (Power BI)</b>.
                 </div>
                 <br>
                 <h5>Data Sources</h5>
