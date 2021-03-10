@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>ER Diagram</h1>
+        <h5>Flight Data Vault 2.0 Model - Entity Relationship Diagram</h5>
         <div id="ERDiagram_paper"></div>
     </div>
 </template>
@@ -8,17 +8,18 @@
 //import * as joint from 'jointjs'
 
 export default {
+    title: 'Flight ER Diagram',
     mounted() {
         const joint=this.$joint
         const V = joint.V;
         const g = joint.g;
         var erd = joint.shapes.erd;
-        var graph = new joint.dia.Graph();
+        var ERgraph = new joint.dia.Graph();
         var paper = new joint.dia.Paper({
             el: document.getElementById('ERDiagram_paper'),
-            width: 695,
-            height: 600,
-            model: graph,
+            width: 1100,
+            height: 450,
+            model: ERgraph,
             linkPinning: false,
             highlighting: false,
             defaultConnectionPoint: function(line, view) {
@@ -28,7 +29,6 @@ export default {
         });
 
         // Custom highlighter - display an outline around each element that fits its shape.
-        /**/
         var highlighter = V('path', {
             'stroke': '#e9fc03',
             'stroke-width': '2px',
@@ -52,7 +52,7 @@ export default {
             console.log(h);
             return ['M', w / 2, 0, w, w / 2, w / 2, w, 0, w / 2, 'z'].join(' ');
         };
-
+        
         erd.ISA.prototype.getHighlighterPath = function(w, h) {
 
             return ['M', -8, 1, w + 8, 1, w / 2, h + 2, 'z'].join(' ');
@@ -116,23 +116,22 @@ export default {
 
         // Create shapes
 
-        var employee = new erd.Entity({
-
+        var hub = new erd.Entity({
             position: {
                 x: 100,
                 y: 200
             },
             attrs: {
                 text: {
-                    fill: '#ffffff',
+                    fill: 'black',
                     text: 'Employee',
                     letterSpacing: 0,
                     style: {
-                        textShadow: '1px 0 1px #333333'
+                        textShadow: '1px 0 1px black'
                     }
                 },
                 '.outer': {
-                    fill: '#31d0c6',
+                    fill: '#68ddd5',
                     stroke: 'none',
                     filter: {
                         name: 'dropShadow',
@@ -145,45 +144,8 @@ export default {
                     }
                 },
                 '.inner': {
-                    fill: '#31d0c6',
+                    fill: '#68ddd5',
                     stroke: 'none',
-                    filter: {
-                        name: 'dropShadow',
-                        args: {
-                            dx: 0.5,
-                            dy: 2,
-                            blur: 2,
-                            color: '#333333'
-                        }
-                    }
-                }
-            }
-        });
-
-        var wage = new erd.WeakEntity({
-
-            position: {
-                x: 530,
-                y: 200
-            },
-            attrs: {
-                text: {
-                    fill: '#ffffff',
-                    text: 'Wage',
-                    letterSpacing: 0,
-                    style: {
-                        textShadow: '1px 0 1px #333333'
-                    }
-                },
-                '.inner': {
-                    fill: '#31d0c6',
-                    stroke: 'none',
-                    points: '155,5 155,55 5,55 5,5'
-                },
-                '.outer': {
-                    fill: 'none',
-                    stroke: '#31d0c6',
-                    points: '160,0 160,60 0,60 0,0',
                     filter: {
                         name: 'dropShadow',
                         args: {
@@ -197,125 +159,23 @@ export default {
             }
         });
 
-        var paid = new erd.IdentifyingRelationship({
-
-            position: {
-                x: 350,
-                y: 190
-            },
-            attrs: {
-                text: {
-                    fill: '#ffffff',
-                    text: 'Gets paid',
-                    letterSpacing: 0,
-                    style: {
-                        textShadow: '1px 0 1px #333333'
-                    }
-                },
-                '.inner': {
-                    fill: '#7c68fd',
-                    stroke: 'none'
-                },
-                '.outer': {
-                    fill: 'none',
-                    stroke: '#7c68fd',
-                    filter: {
-                        name: 'dropShadow',
-                        args: {
-                            dx: 0,
-                            dy: 2,
-                            blur: 1,
-                            color: '#333333'
-                        }
-                    }
-                }
-            }
-        });
-
-        var isa = new erd.ISA({
-
-            position: {
-                x: 125,
-                y: 300
-            },
-            attrs: {
-                text: {
-                    text: 'ISA',
-                    fill: '#ffffff',
-                    letterSpacing: 0,
-                    style: {
-                        'text-shadow': '1px 0 1px #333333'
-                    }
-                },
-                polygon: {
-                    fill: '#fdb664',
-                    stroke: 'none',
-                    filter: {
-                        name: 'dropShadow',
-                        args: {
-                            dx: 0,
-                            dy: 2,
-                            blur: 1,
-                            color: '#333333'
-                        }
-                    }
-                }
-            }
-        });
-
-        var number = new erd.Key({
-
-            position: {
-                x: 10,
-                y: 90
-            },
-            attrs: {
-                text: {
-                    fill: '#ffffff',
-                    text: 'Number',
-                    letterSpacing: 0,
-                    style: {
-                        textShadow: '1px 0 1px #333333'
-                    }
-                },
-                '.outer': {
-                    fill: '#feb662',
-                    stroke: 'none',
-                    filter: {
-                        name: 'dropShadow',
-                        args: {
-                            dx: 0,
-                            dy: 2,
-                            blur: 2,
-                            color: '#222138'
-                        }
-                    }
-                },
-                '.inner': {
-                    fill: '#feb662',
-                    stroke: 'none'
-                }
-            }
-        });
-
-        var employeeName = new erd.Normal({
-
+        var sat = new erd.Normal({
             position: {
                 x: 75,
                 y: 30
             },
             attrs: {
                 text: {
-                    fill: '#ffffff',
+                    fill: 'black',
                     text: 'Name',
                     letterSpacing: 0,
                     style: {
-                        textShadow: '1px 0 1px #333333'
+                        textShadow: '1px 0 1px black'
                     }
                 },
                 '.outer': {
-                    fill: '#fe8550',
-                    stroke: '#fe854f',
+                    fill: '#ff8450',
+                    stroke: '#fe976a',
                     filter: {
                         name: 'dropShadow',
                         args: {
@@ -329,98 +189,27 @@ export default {
             }
         });
 
-        var skills = new erd.Multivalued({
-
-            position: {
-                x: 150,
-                y: 90
-            },
-            attrs: {
-                text: {
-                    fill: '#ffffff',
-                    text: 'Skills',
-                    letterSpacing: 0,
-                    style: {
-                        'text-shadow': '1px 0px 1px #333333'
-                    }
-                },
-                '.inner': {
-                    fill: '#fe8550',
-                    stroke: 'none',
-                    rx: 43,
-                    ry: 21
-
-                },
-                '.outer': {
-                    fill: '#464a65',
-                    stroke: '#fe8550',
-                    filter: {
-                        name: 'dropShadow',
-                        args: {
-                            dx: 0,
-                            dy: 2,
-                            blur: 2,
-                            color: '#222138'
-                        }
-                    }
-                }
-            }
-        });
-
-        var amount = new erd.Derived({
-
-            position: {
-                x: 440,
-                y: 80
-            },
-            attrs: {
-                text: {
-                    fill: '#ffffff',
-                    text: 'Amount',
-                    letterSpacing: 0,
-                    style: {
-                        textShadow: '1px 0 1px #333333'
-                    }
-                },
-                '.inner': {
-                    fill: '#fca079',
-                    stroke: 'none',
-                    display: 'block'
-                },
-                '.outer': {
-                    fill: '#464a65',
-                    stroke: '#fe854f',
-                    'stroke-dasharray': '3,1',
-                    filter: {
-                        name: 'dropShadow',
-                        args: {
-                            dx: 0,
-                            dy: 2,
-                            blur: 2,
-                            color: '#222138'
-                        }
-                    }
-                }
-            }
-        });
-
-        var uses = new erd.Relationship({
+        var link = new erd.Relationship({
 
             position: {
                 x: 300,
                 y: 390
             },
+            size: {
+                    width: 130,
+                    height: 100
+                },
             attrs: {
                 text: {
-                    fill: '#ffffff',
+                    fill: 'black',
                     text: 'Uses',
                     letterSpacing: 0,
                     style: {
-                        textShadow: '1px 0 1px #333333'
+                        textShadow: '1px 0 1px black'
                     }
                 },
                 '.outer': {
-                    fill: '#797d9a',
+                    fill: '#feb662',
                     stroke: 'none',
                     filter: {
                         name: 'dropShadow',
@@ -428,7 +217,7 @@ export default {
                             dx: 0,
                             dy: 2,
                             blur: 1,
-                            color: '#333333'
+                            color: '#feb662'
                         }
                     }
                 }
@@ -436,15 +225,20 @@ export default {
         });
 
         // Create new shapes by cloning
+        var S_Airport = sat.clone().position(30, 55).attr('text/text', 'S_Airport');
+        var H_Airport = hub.clone().position(210, 50).attr('text/text', 'H_Airport');
+        var H_Region = hub.clone().position(660, 50).attr('text/text', 'H_Region');
+        var S_Region = sat.clone().position(890, 55).attr('text/text', 'S_Region');
+        var L_Airport_Region = link.clone().position(445, 30).attr('text/text', 'L_Airport_Region');
 
-        var salesman = employee.clone().translate(0, 200).attr('text/text', 'Salesman');
+        var L_Flight = link.clone().position(220, 200).attr('text/text', 'L_Flight');
+        var S_Flight = sat.clone().position(30, 225).attr('text/text', 'S_Flight');
+        var H_Aircraft = hub.clone().position(210, 380).attr('text/text', 'H_Aircraft');
+        var S_Aircraft = sat.clone().position(30, 385).attr('text/text', 'S_Aircraft');
 
-        var date = employeeName.clone().position(585, 80).attr('text/text', 'Date');
-
-        var car = employee.clone().position(430, 400).attr('text/text', 'Company car');
-
-        var plate = number.clone().position(405, 500).attr('text/text', 'Plate');
-
+        var L_Region_Country = link.clone().position(670, 195).attr('text/text', 'L_Region_Country');
+        var H_Country = hub.clone().position(660, 380).attr('text/text', 'H_Country');
+        var S_Country = sat.clone().position(890, 385).attr('text/text', 'S_Country');
 
         // Helpers
 
@@ -466,20 +260,35 @@ export default {
                 }
             });
 
-            return myLink.addTo(graph);
+            return myLink.addTo(ERgraph);
         };
 
-        var createLabel = function(txt) {
+        var createLabel = function(txt1,txt2) {
             return {
                 labels: [{
                     position: {
-                        //distance:20,
+                        distance:10,
                         offset: 10
                     },
                     attrs: {
                         text: {
                             dy: -8,
-                            text: txt,
+                            text: txt1,
+                            fill: '#000000'
+                        },
+                        rect: {
+                            fill: 'none'
+                        }
+                    }
+                },{
+                    position: {
+                        distance:70,
+                        offset: 10
+                    },
+                    attrs: {
+                        text: {
+                            dy: -8,
+                            text: txt2 || 'n',
                             fill: '#000000'
                         },
                         rect: {
@@ -492,20 +301,23 @@ export default {
 
         // Add shapes to the graph
 
-        graph.addCells([employee, salesman, wage, paid, isa, number, employeeName, skills, amount, date, plate, car, uses]);
+        ERgraph.addCells([L_Flight,S_Flight,H_Airport,S_Airport,H_Aircraft,S_Aircraft,H_Region,S_Region,
+        L_Airport_Region,H_Country,S_Country,L_Region_Country]);
 
-        createLink(employee, paid).set(createLabel('1'));
-        createLink(employee, number);
-        createLink(employee, employeeName);
-        createLink(employee, skills);
-        createLink(employee, isa);
-        createLink(isa, salesman);
-        createLink(salesman, uses).set(createLabel('0..1'));
-        createLink(car, uses).set(createLabel('1..1'));
-        createLink(car, plate);
-        createLink(wage, paid).set(createLabel('N'));
-        createLink(wage, amount);
-        createLink(wage, date);
+        createLink(H_Airport, S_Airport).set(createLabel('1','1'));
+        createLink(H_Aircraft, S_Aircraft).set(createLabel('1','1'));
+        createLink(H_Region, S_Region).set(createLabel('1','1'));
+        createLink(H_Country, S_Country).set(createLabel('1','1'));
+        createLink(L_Flight, S_Flight).set(createLabel('1','1'));
+
+        createLink(H_Region, L_Region_Country).set(createLabel('1','N'));
+
+        createLink(H_Country, L_Region_Country).set(createLabel('1','N'));
+        createLink(H_Airport, L_Flight).set(createLabel('1','N'));
+        createLink(H_Aircraft, L_Flight).set(createLabel('1','N'));
+        createLink(H_Airport, L_Airport_Region).set(createLabel('1','N'));
+        createLink(H_Region, L_Airport_Region).set(createLabel('1','N'));
+        
     }
 }
 </script>

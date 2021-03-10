@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-dark background-black justify-content-between flex-nowrap flex-row">
+    <nav class="navbar navbar-dark background-black justify-content-between flex-nowrap flex-row header">
       <div class="container">
           <router-link class="navbar-brand float-left" to="/">
             <img src= '@/assets/logo/logo-white.png' width="80" height="50"/>            
@@ -17,10 +17,10 @@
             <router-link class="nav-link pr-3" to="/ETLMonitoring">ETL Monitoring</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/FlightModelling">Flight Modelling</router-link>
+            <router-link class="nav-link pr-3" to="/UMLDiagram">Relational Model</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/ERDiagram">ER Diagrams</router-link>
+            <router-link class="nav-link pr-3" to="/ERDiagram">Entity Relationship Diagram</router-link>
           </li>
         </ul>
         
@@ -28,7 +28,7 @@
     </nav>
     
     <!-- Router view -->
-    <div class="container mt-2">
+    <div class="container scrollmenu">
       <router-view></router-view>
     </div>
   </div>

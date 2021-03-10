@@ -4,7 +4,7 @@
             <div class="col-9">
                 <h5>Motivation</h5>
                 <div>
-                I am Long Nguyen. I am searching for a new challenge in Business Intelligence; therefor, 
+                I am Long Nguyen. I am searching for a new challenge in Business Intelligence; therefore, 
                 I built a <b>flight project</b> to showcase my skills in 
                 <b>Data Warehouse (Microsoft SQL Server 2019)</b> and <b>Business Intelligence (Power BI)</b>.
                 </div>
@@ -15,7 +15,7 @@
                 <br>
                 <h5><router-link class="nav-link pr-3 no-padding" to="/FlightAnalytics">Flight Analytics</router-link></h5>
             </div>
-            <div class="col-3"><img src= '@/assets/profile.png' width="220" height="220"/></div>
+            <div class="col-3" style="position: static"><img src= '@/assets/profile.png' width="220" height="220"/></div>
         </div>
         <div>The first report illustrates interesting information about flight changes by time, 
             the most used aircraft, most visited airport. The second report analyze flight route between
@@ -32,8 +32,8 @@
             to monitor and find the root cause of failed processes.
         </div>
         <br>
-        <h5>Modelling</h5>
-        <div> UML is used to demonstrate the <b>Data Vault 2.0 architecture</b> of this flight project.
+        <h5><router-link class="no-padding nav-link pr-3" to="/UMLDiagram">Modelling</router-link></h5>
+        <div> Relational Model is used to demonstrate the <b>Data Vault 2.0 architecture</b> of this flight project.
         </div>
     </div>
 </template>
