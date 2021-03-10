@@ -12,14 +12,14 @@
                 <h5>Data Sources</h5>
                 <div>Flight and aircraft data: https://opensky-network.org/</div>
                 <div>Airport, country and region data: https://ourairports.com/data/</div>
+                <div>Data is sourced by <b>Python</b> script</div>
                 <br>
                 <h5><router-link class="nav-link pr-3 no-padding" to="/FlightAnalytics">Flight Analytics</router-link></h5>
             </div>
             <div class="col-3" style="position: static"><img src= '@/assets/profile.png' width="220" height="220"/></div>
         </div>
-        <div>The first report illustrates interesting information about flight changes by time, 
-            the most used aircraft, most visited airport. The second report analyze flight route between
-            departure airports and arrival airports.
+        <div>
+            The first report illustrates interesting information about flight changes by time, the most used aircraft, and the most visited airport. The second report analyzes flight routes between airports and arrival airports.
         </div>
         <br>
         <h5><router-link class="nav-link pr-3 no-padding" to="/DataFlow">Data Flow</router-link></h5>
