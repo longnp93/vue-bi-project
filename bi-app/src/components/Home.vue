@@ -19,12 +19,12 @@
             <div class="col-3" style="position: static"><img src= '@/assets/profile.png' width="220" height="220"/></div>
         </div>
         <div>
-            The first report illustrates interesting information about flight changes by time, the most used aircraft, and the most visited airport. The second report analyzes flight routes between airports and arrival airports.
+            The first report illustrates information about flight changes by time, the most used aircraft, and the most visited airport. The second report analyzes flight routes between airports and arrival airports.
         </div>
         <br>
         <h5><router-link class="nav-link pr-3 no-padding" to="/DataFlow">Data Flow</router-link></h5>
         <div>The data flow demonstrates how data is moved and transformed from Data Source 
-            to <b> Data Vault 2.0</b> and finally to Information Mart.
+            to <b> Data Vault 2.0</b> and finally to Information Mart which is used by Power BI tool.
         </div>
         <br>
         <h5><router-link class="no-padding nav-link pr-3" to="/ETLMonitoring">ETL Monitoring</router-link></h5>
