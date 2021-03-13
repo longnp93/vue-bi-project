@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-dark background-black justify-content-between flex-nowrap flex-row header">
+    <nav class="navbar navbar-dark background-black justify-content-between flex-nowrap flex-row">
       <div class="container">
           <router-link class="navbar-brand float-left" to="/">
             <img src= '@/assets/logo/logo-white.png' width="80" height="50"/>            
