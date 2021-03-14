@@ -8,6 +8,9 @@
  
         <ul class="nav navbar-nav flex-row float-right">
           <li class="nav-item">
+            <router-link class="nav-link pr-3" to="/">About</router-link>
+          </li>
+          <li class="nav-item">
             <router-link class="nav-link pr-3" to="/FlightAnalytics">Flight Analytics</router-link>
           </li>
           <li class="nav-item">
@@ -17,7 +20,7 @@
             <router-link class="nav-link pr-3" to="/ETLMonitoring">ETL Monitoring</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/UMLDiagram">Relational Model</router-link>
+            <router-link class="nav-link pr-3" to="/UMLDiagram">Data Modeling</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link pr-3" to="/ERDiagram">Entity Relationship Diagram</router-link>

@@ -1,6 +1,6 @@
 <template>
    <div>
-       <h5>Flight Data Vault 2.0 Model - Entity Relationship Diagram</h5>
+       <h5>Flight Data Vault 2.0 Model - Relational Diagram</h5>
         <div id="uml_paper"></div>
         <!--<ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -27,7 +27,7 @@
 //import * as joint from 'jointjs'
 
 export default {
-    title: 'Relational Model',
+    title: 'Data Modeling',
     mounted() {
         
         // *********************************************************************************
